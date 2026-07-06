@@ -213,6 +213,20 @@
     });
   }
 
+  /* ---------- Barra fixa mobile: aparece só ao rolar além do topo ---------- */
+  function initStickyCTA() {
+    var hero = document.getElementById("topo");
+    if (!hero) return;
+    if (!("IntersectionObserver" in window)) { document.body.classList.add("cta-visible"); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        // topo visível => esconde a barra; topo fora da tela => mostra
+        document.body.classList.toggle("cta-visible", !en.isIntersecting);
+      });
+    }, { threshold: 0, rootMargin: "0px 0px -40% 0px" });
+    io.observe(hero);
+  }
+
   /* ---------- Conteúdo editável (config.js -> LP_CONTENT) ---------- */
   function applyContent() {
     var C = window.LP_CONTENT || {};
@@ -251,6 +265,7 @@
     initReveal();
     initCounters();
     initNav();
+    initStickyCTA();
 
     var phone = document.querySelector('input[name="telefone"]');
     if (phone) phone.addEventListener("input", function () { this.value = maskPhone(this.value); });

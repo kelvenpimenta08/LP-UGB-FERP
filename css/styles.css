@@ -577,8 +577,12 @@ p{margin:0 0 1rem}
   .split .media .badge{position:relative;left:0;bottom:0;margin-top:16px;max-width:none}
   .gallery{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
-  .wa-float{bottom:82px}
-  .mobile-cta{display:flex}
+  /* Barra fixa: começa escondida (deslizada p/ baixo) e só sobe depois
+     que a pessoa rola além do topo — controlada por body.cta-visible via JS */
+  .mobile-cta{display:flex;transform:translateY(125%);transition:transform .32s ease}
+  body.cta-visible .mobile-cta{transform:none}
+  .wa-float{bottom:22px;transition:bottom .32s ease,transform .2s}
+  body.cta-visible .wa-float{bottom:84px}
   .topbar{display:none}
   .hero .container{padding-bottom:38px}
 
