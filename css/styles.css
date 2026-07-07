@@ -211,6 +211,8 @@ p{margin:0 0 1rem}
   background-repeat:repeat-x;background-position:0 100%;background-size:42px 13px;
   -webkit-box-decoration-break:clone;box-decoration-break:clone}
 .hero-copy h1 .jaleco-emoji{font-size:.82em;vertical-align:-.06em;line-height:1}
+/* "começa aqui" sobe um pouco para encostar melhor no risco do "jaleco branco" */
+.hero-copy h1 .hero-endline{position:relative;top:-.16em}
 .hero-sub{font-size:1.18rem;color:#cbd9ec;max-width:520px;margin:26px 0 32px;line-height:1.62}
 .hero-sub strong{color:#fff;font-weight:700}
 .hero-list{list-style:none;margin:0 0 34px;padding:0;display:grid;gap:13px;max-width:520px}
