@@ -365,14 +365,20 @@ p{margin:0 0 1rem}
 .coord .creds li{display:flex;gap:11px;align-items:flex-start;color:#e4ecf7;font-weight:600;font-size:.92rem;
   padding:14px 0;border-top:1px solid rgba(255,255,255,.13)}
 .coord .creds li::before{content:"";width:9px;height:9px;margin-top:6px;flex:none;background:var(--yellow);transform:rotate(45deg)}
-.faculty{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:44px}
-.faculty img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;
-  border:2px solid rgba(255,255,255,.18);filter:grayscale(.15);transition:border-color .2s,filter .2s,transform .2s}
-.faculty img:hover{border-color:var(--yellow);filter:none;transform:translateY(-3px)}
-.docentes-note{text-align:center;margin-top:34px;color:#c3d6ee;font-weight:500}
+/* Grade nomeada do corpo docente: foto redonda + nome + titulação */
+.faculty{display:grid;grid-template-columns:repeat(5,1fr);gap:36px 22px;margin-top:46px}
+.fac{margin:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:11px}
+.fac img{width:96px;height:96px;object-fit:cover;border-radius:50%;
+  border:2px solid rgba(255,255,255,.2);filter:grayscale(.12);transition:border-color .2s,filter .2s,transform .2s}
+.fac:hover img{border-color:var(--yellow);filter:none;transform:translateY(-4px)}
+.fac figcaption{display:flex;flex-direction:column;gap:3px}
+.fac b{color:#fff;font-weight:700;font-size:.82rem;line-height:1.28;letter-spacing:-.01em;max-width:15ch}
+.fac span{color:var(--yellow);font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}
+.docentes-note{text-align:center;margin-top:44px;color:#c3d6ee;font-weight:500}
 .docentes-note b{color:var(--yellow);font-weight:700}
-@media (max-width:1024px){.faculty{grid-template-columns:repeat(6,1fr)}}
-@media (max-width:760px){.faculty{grid-template-columns:repeat(4,1fr);gap:10px}}
+@media (max-width:1024px){.faculty{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:680px){.faculty{grid-template-columns:repeat(3,1fr);gap:30px 14px}}
+@media (max-width:430px){.faculty{grid-template-columns:repeat(2,1fr)}}
 
 /* =============================================================
    LOCALIZAÇÃO / REGIÃO
