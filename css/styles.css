@@ -206,6 +206,7 @@ p{margin:0 0 1rem}
    (resolve a ironia de pintar "branco" de amarelo + entra a jogada de fontes) */
 .hero-copy h1 em{font-family:"Caveat",cursive;font-style:normal;font-weight:700;color:#fff;
   font-size:1.26em;letter-spacing:0;line-height:1;padding:0 .05em .08em;
+  position:relative;top:-.12em;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='13'%3E%3Cpath d='M1 7 Q11 1 21 7 T41 7' stroke='%23f7c948' stroke-width='3.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat:repeat-x;background-position:0 100%;background-size:42px 13px;
   -webkit-box-decoration-break:clone;box-decoration-break:clone}
