@@ -238,7 +238,13 @@ p{margin:0 0 1rem}
   width:100%;padding:13px 14px;border:1.6px solid var(--line);border-radius:var(--radius-sm);
   font-size:1rem;font-family:inherit;color:var(--ink);background:#fbfcfe;transition:border .15s,box-shadow .15s}
 .field input::placeholder{color:#9aa8bd}
-.field input:focus,.field select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(8,69,136,.14);background:#fff}
+/* Selects: seta própria (chevron azul) + respiro à direita, sem o arrow nativo apertado */
+.field select{-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor:pointer;padding-right:44px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23084588' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;background-size:18px}
+/* enquanto o placeholder (opção vazia) está selecionado, texto em cinza como nos inputs */
+.field select:invalid{color:#9aa8bd}
+.field input:focus,.field select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(8,69,136,.14);background-color:#fff}
 .field.invalid input,.field.invalid select{border-color:var(--red);box-shadow:0 0 0 3px rgba(225,27,34,.12)}
 .field .err{display:none;color:var(--red);font-size:.78rem;font-weight:700;margin-top:5px}
 .field.invalid .err{display:block}
