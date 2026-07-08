@@ -338,6 +338,29 @@ p{margin:0 0 1rem}
 .promo-banner img{width:100%;height:auto;display:block}
 
 /* =============================================================
+   CENTRO DE CIÊNCIAS DA SAÚDE — brasão + narrativa
+   ============================================================= */
+.ccs-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.ccs-brasao{position:relative;display:flex;align-items:center;justify-content:center;padding:16px}
+.ccs-brasao::before{content:"";position:absolute;width:84%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(31,111,208,.14),rgba(31,111,208,0) 66%)}
+.ccs-brasao img{position:relative;width:100%;max-width:390px;
+  filter:drop-shadow(0 18px 34px rgba(8,69,136,.18))}
+.ccs-text h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--navy);margin:16px 0 18px;font-weight:800}
+.ccs-text p{color:var(--muted);font-size:1.02rem;line-height:1.7;margin:0 0 15px}
+.ccs-text strong{color:var(--navy);font-weight:700}
+.ccs-chips{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+.ccs-chip{display:flex;flex-direction:column;gap:3px;background:var(--white);border:1px solid var(--line);
+  border-left:4px solid var(--yellow);border-radius:12px;padding:14px 20px;box-shadow:var(--shadow-sm);flex:1;min-width:200px}
+.ccs-chip b{color:var(--navy);font-family:var(--font-display);font-weight:800;font-size:1.3rem;line-height:1.1;letter-spacing:-.01em}
+.ccs-chip span{color:var(--muted);font-size:.82rem;font-weight:600;line-height:1.35}
+@media (max-width:900px){
+  .ccs-grid{grid-template-columns:1fr;gap:26px}
+  .ccs-brasao{padding:0}
+  .ccs-brasao img{max-width:260px}
+}
+
+/* =============================================================
    CORPO DOCENTE — banda azul
    ============================================================= */
 .section.dark{color:#fff;position:relative;overflow:hidden;
