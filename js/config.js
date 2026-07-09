@@ -18,7 +18,7 @@ window.LP_CONFIG = {
      passo a passo em "Google Sheets"). Enquanto estiver vazio, o
      formulário funciona em modo demonstração (salva no navegador
      e segue para o WhatsApp). */
-  LEADS_ENDPOINT: "",
+  LEADS_ENDPOINT: "https://script.google.com/macros/s/AKfycbzS7RcZBVBfeJycvNTA9X-wob0oRyi4XEYBPoi3JRSQblQSeq0v2VP4ZM_XnVhJaucTsw/exec",
 
   /* 3) RASTREAMENTO / PIXELS -----------------------------------
      Preencha os IDs quando tiver. Vazio = desativado (sem erros). */
