@@ -103,6 +103,15 @@
 
   function sendToSheets(data) {
     if (!CFG.LEADS_ENDPOINT) return Promise.resolve({ demo: true });
+    // Se vamos redirecionar em seguida, usa sendBeacon: a entrega do lead
+    // sobrevive à navegação (não é cancelada pelo redirecionamento).
+    if (CFG.REDIRECT_URL && navigator.sendBeacon) {
+      try {
+        navigator.sendBeacon(CFG.LEADS_ENDPOINT,
+          new Blob([JSON.stringify(data)], { type: "text/plain;charset=utf-8" }));
+      } catch (e) {}
+      return Promise.resolve({ beacon: true });
+    }
     // Apps Script aceita POST simples (text/plain evita preflight CORS)
     return fetch(CFG.LEADS_ENDPOINT, {
       method: "POST",
@@ -128,6 +137,12 @@
         currency: "BRL", value: 1,
         interesse: data.interesse || "", cidade: data.cidade || ""
       });
+      // Redirecionamento: um clique = envio (já garantido acima) + ir para outro site.
+      // Pequeno atraso para dar tempo do GTM/pixel registrarem a conversão antes de sair.
+      if (CFG.REDIRECT_URL) {
+        setTimeout(function () { window.location.href = CFG.REDIRECT_URL; }, 400);
+        return;
+      }
       // Sucesso visual
       var card = form.closest(".form-card") || form.parentElement;
       var success = document.getElementById("formSuccess");

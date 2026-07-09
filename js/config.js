@@ -28,8 +28,18 @@ window.LP_CONFIG = {
 
   /* 4) DESTINO APÓS ENVIO --------------------------------------
      true  = após enviar o formulário, abre o WhatsApp automaticamente.
-     false = apenas mostra a mensagem de sucesso (WhatsApp fica opcional). */
-  OPEN_WHATSAPP_AFTER_SUBMIT: true
+     false = apenas mostra a mensagem de sucesso (WhatsApp fica opcional).
+     OBS: se REDIRECT_URL abaixo estiver preenchido, o redirecionamento
+     tem prioridade e esta opção é ignorada. */
+  OPEN_WHATSAPP_AFTER_SUBMIT: true,
+
+  /* 5) REDIRECIONAMENTO APÓS ENVIO -----------------------------
+     Cole aqui o link do site para onde a pessoa deve ser levada após
+     enviar o formulário. Assim, UM clique no botão faz as DUAS coisas:
+     (1) salva o lead na planilha e (2) redireciona para este endereço.
+     O envio do lead é garantido mesmo com o redirecionamento (sendBeacon).
+     Deixe vazio ("") para NÃO redirecionar. Ex.: "https://seusite.com/obrigado" */
+  REDIRECT_URL: ""
 };
 
 /* =============================================================
