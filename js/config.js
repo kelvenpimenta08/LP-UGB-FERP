@@ -39,7 +39,7 @@ window.LP_CONFIG = {
      (1) salva o lead na planilha e (2) redireciona para este endereço.
      O envio do lead é garantido mesmo com o redirecionamento (sendBeacon).
      Deixe vazio ("") para NÃO redirecionar. Ex.: "https://seusite.com/obrigado" */
-  REDIRECT_URL: ""
+  REDIRECT_URL: "https://vestibular.ugb.edu.br/medicina/inscricao"
 };
 
 /* =============================================================
