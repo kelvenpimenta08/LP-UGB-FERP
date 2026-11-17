@@ -54,7 +54,7 @@ window.LP_CONTENT = {
      Coloque o arquivo em assets/img/ e aponte o caminho aqui.
      Para trocar por outra imagem, é só mudar o nome do arquivo. */
   BANNERS: [
-    "assets/img/banner-docente.jpg"
+    "assets/img/banner-vestibular-2027.jpg"
   ],
 
   /* CARDS DE FINANCIAMENTO (título e texto de cada um).
