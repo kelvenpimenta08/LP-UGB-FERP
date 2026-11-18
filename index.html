@@ -5,12 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5QLCFD64');</script>
+<!-- Google Tag Manager (carregamento adiado p/ performance)
+     O dataLayer e o evento gtm.js são registrados na hora (nada se perde);
+     o script do GTM baixa após a página carregar OU na 1ª interação
+     (rolar, tocar, clicar, digitar) — o que vier primeiro. -->
+<script>
+window.dataLayer=window.dataLayer||[];window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+(function(){var ok=0;function load(){if(ok)return;ok=1;var j=document.createElement('script');j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id=GTM-5QLCFD64';document.head.appendChild(j);}
+['scroll','touchstart','pointerdown','keydown'].forEach(function(e){window.addEventListener(e,load,{once:true,passive:true});});
+if(document.readyState==='complete'){setTimeout(load,1);}else{window.addEventListener('load',function(){setTimeout(load,1);});}})();
+</script>
 <!-- End Google Tag Manager -->
 
 <!-- ===================== SEO ===================== -->
@@ -32,9 +37,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@500;600;700;800&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Fontes locais: pré-carrega as 3 usadas no topo da página -->
+<link rel="preload" href="assets/fonts/poppins-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/mulish-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/caveat-700-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Imagem de fundo do topo (é o LCP): descoberta e baixada logo de cara -->
+<link rel="preload" as="image" href="assets/img/bg/hero-lab-m.webp" type="image/webp" media="(max-width: 760px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/bg/hero-lab.webp" type="image/webp" media="(min-width: 761px)" fetchpriority="high">
 
 <link rel="stylesheet" href="css/styles.css">
 
@@ -109,7 +119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="container nav">
-    <a href="#" class="logo" aria-label="UGB FERP"><img src="assets/img/logo-color.png" alt="UGB/FERP, Centro Universitário Geraldo Di Biase"></a>
+    <a href="#" class="logo" aria-label="UGB FERP"><img src="assets/img/web/logo-color.webp" alt="UGB/FERP, Centro Universitário Geraldo Di Biase"></a>
     <div class="nav-cta">
       <button class="btn-arrow sm" data-scroll="form">
         <span class="ba-label">Inscreva-se</span>
@@ -307,7 +317,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="split">
       <div class="media" data-reveal>
-        <img src="assets/img/lab-anatomia.jpg" alt="Laboratório de anatomia e habilidades médicas do UGB/FERP" loading="lazy">
+        <img src="assets/img/web/lab-anatomia.webp" alt="Laboratório de anatomia e habilidades médicas do UGB/FERP" loading="lazy">
         <div class="badge">Laboratórios <span>de habilidades médicas</span></div>
       </div>
       <div data-reveal>
@@ -324,11 +334,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="gallery" data-reveal>
-      <figure><img src="assets/img/campus-aereo.jpg" alt="Vista aérea do campus do UGB/FERP" loading="lazy"><figcaption>Campus</figcaption></figure>
-      <figure><img src="assets/img/sala-metodologias.jpg" alt="Sala de metodologias ativas" loading="lazy"><figcaption>Salas modernas</figcaption></figure>
-      <figure><img src="assets/img/auditorio.jpg" alt="Auditório, cinema e teatro" loading="lazy"><figcaption>Auditório</figcaption></figure>
-      <figure><img src="assets/img/hall-moderno.jpg" alt="Espaços de convivência" loading="lazy"><figcaption>Convivência</figcaption></figure>
-      <figure><img src="assets/img/complexo-esportivo.jpg" alt="Complexo esportivo" loading="lazy"><figcaption>Esportivo</figcaption></figure>
+      <figure><img src="assets/img/web/campus-aereo.webp" alt="Vista aérea do campus do UGB/FERP" loading="lazy"><figcaption>Campus</figcaption></figure>
+      <figure><img src="assets/img/web/sala-metodologias.webp" alt="Sala de metodologias ativas" loading="lazy"><figcaption>Salas modernas</figcaption></figure>
+      <figure><img src="assets/img/web/auditorio.webp" alt="Auditório, cinema e teatro" loading="lazy"><figcaption>Auditório</figcaption></figure>
+      <figure><img src="assets/img/web/hall-moderno.webp" alt="Espaços de convivência" loading="lazy"><figcaption>Convivência</figcaption></figure>
+      <figure><img src="assets/img/web/complexo-esportivo.webp" alt="Complexo esportivo" loading="lazy"><figcaption>Esportivo</figcaption></figure>
     </div>
   </div>
 </section>
@@ -338,7 +348,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="ccs-grid">
       <div class="ccs-brasao" data-reveal>
-        <img src="assets/img/brasao-ccs.png" alt="Brasão do Centro de Ciências da Saúde · Medicina UGB" loading="lazy">
+        <img src="assets/img/web/brasao-ccs.webp" alt="Brasão do Centro de Ciências da Saúde · Medicina UGB" loading="lazy">
       </div>
       <div class="ccs-text" data-reveal>
         <span class="eyebrow">Estrutura de excelência</span>
@@ -368,7 +378,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="coord" data-reveal>
       <div class="photo">
-        <img src="assets/img/coordenador.jpg" alt="Prof. Dr. Francisco José Barcellos Sampaio">
+        <img src="assets/img/web/coordenador.webp" alt="Prof. Dr. Francisco José Barcellos Sampaio" loading="lazy" decoding="async">
       </div>
       <div>
         <span class="eyebrow on-dark">Coordenação</span>
@@ -384,26 +394,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="faculty" data-reveal>
-      <figure class="fac"><img src="assets/img/docentes/prof-1.jpg" alt="Aline Cristina Teixeira" loading="lazy"><figcaption><b>Aline Cristina Teixeira</b><span>Doutora</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-2.jpg" alt="Altagratia Chiesse" loading="lazy"><figcaption><b>Altagratia Chiesse</b><span>Doutora</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-3.jpg" alt="Annelise Fortuna de A. Freire da Costa" loading="lazy"><figcaption><b>Annelise Fortuna de A. Freire da Costa</b><span>Doutora</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-4.jpg" alt="Antônio Rodrigues Braga Neto" loading="lazy"><figcaption><b>Antônio Rodrigues Braga Neto</b><span>Doutor</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-5.jpg" alt="Camila Miranda de Amorim Resende" loading="lazy"><figcaption><b>Camila Miranda de Amorim Resende</b><span>Doutora</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-6.jpg" alt="Carla Braga Mano Gallo" loading="lazy"><figcaption><b>Carla Braga Mano Gallo</b><span>Doutora</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-7.jpg" alt="Clarice Fraga Esteves Maciel Osório" loading="lazy"><figcaption><b>Clarice Fraga Esteves Maciel Osório</b><span>Mestre</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-8.jpg" alt="Elisa Ferreira Silva de Alcantara" loading="lazy"><figcaption><b>Elisa Ferreira Silva de Alcantara</b><span>Doutora</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-9.jpg" alt="Felipe Mactavisch da Cruz" loading="lazy"><figcaption><b>Felipe Mactavisch da Cruz</b><span>Doutor</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-10.jpg" alt="Flávia Gonçalves Coelho de Souza e Oliveira" loading="lazy"><figcaption><b>Flávia Gonçalves Coelho de Souza e Oliveira</b><span>Doutora</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-11.jpg" alt="Francisco José Barcellos Sampaio" loading="lazy"><figcaption><b>Francisco José Barcellos Sampaio</b><span>Doutor</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-12.jpg" alt="José Galvão Alves" loading="lazy"><figcaption><b>José Galvão Alves</b><span>Doutor</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-13.jpg" alt="Marcelo Ribeiro de Almeida Guedes" loading="lazy"><figcaption><b>Marcelo Ribeiro de Almeida Guedes</b><span>Mestre</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-14.jpg" alt="Marcos Guimarães de Souza Cunha" loading="lazy"><figcaption><b>Marcos Guimarães de Souza Cunha</b><span>Doutor</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-15.jpg" alt="Marta Lúcia Carvalho Galvão Alves" loading="lazy"><figcaption><b>Marta Lúcia Carvalho Galvão Alves</b><span>Mestre</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-16.jpg" alt="Miguel de Lemos Neto" loading="lazy"><figcaption><b>Miguel de Lemos Neto</b><span>Doutor</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-17.jpg" alt="Natasha Teixeira Logsdon" loading="lazy"><figcaption><b>Natasha Teixeira Logsdon</b><span>Doutora</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-18.jpg" alt="Silvia Mello dos Santos" loading="lazy"><figcaption><b>Silvia Mello dos Santos</b><span>Mestre</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-19.jpg" alt="Ulisses Cerqueira Linhares" loading="lazy"><figcaption><b>Ulisses Cerqueira Linhares</b><span>Doutor</span></figcaption></figure>
-      <figure class="fac"><img src="assets/img/docentes/prof-20.jpg" alt="Waldemar Silva Costa" loading="lazy"><figcaption><b>Waldemar Silva Costa</b><span>Doutor</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-1.webp" alt="Aline Cristina Teixeira" loading="lazy"><figcaption><b>Aline Cristina Teixeira</b><span>Doutora</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-2.webp" alt="Altagratia Chiesse" loading="lazy"><figcaption><b>Altagratia Chiesse</b><span>Doutora</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-3.webp" alt="Annelise Fortuna de A. Freire da Costa" loading="lazy"><figcaption><b>Annelise Fortuna de A. Freire da Costa</b><span>Doutora</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-4.webp" alt="Antônio Rodrigues Braga Neto" loading="lazy"><figcaption><b>Antônio Rodrigues Braga Neto</b><span>Doutor</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-5.webp" alt="Camila Miranda de Amorim Resende" loading="lazy"><figcaption><b>Camila Miranda de Amorim Resende</b><span>Doutora</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-6.webp" alt="Carla Braga Mano Gallo" loading="lazy"><figcaption><b>Carla Braga Mano Gallo</b><span>Doutora</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-7.webp" alt="Clarice Fraga Esteves Maciel Osório" loading="lazy"><figcaption><b>Clarice Fraga Esteves Maciel Osório</b><span>Mestre</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-8.webp" alt="Elisa Ferreira Silva de Alcantara" loading="lazy"><figcaption><b>Elisa Ferreira Silva de Alcantara</b><span>Doutora</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-9.webp" alt="Felipe Mactavisch da Cruz" loading="lazy"><figcaption><b>Felipe Mactavisch da Cruz</b><span>Doutor</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-10.webp" alt="Flávia Gonçalves Coelho de Souza e Oliveira" loading="lazy"><figcaption><b>Flávia Gonçalves Coelho de Souza e Oliveira</b><span>Doutora</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-11.webp" alt="Francisco José Barcellos Sampaio" loading="lazy"><figcaption><b>Francisco José Barcellos Sampaio</b><span>Doutor</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-12.webp" alt="José Galvão Alves" loading="lazy"><figcaption><b>José Galvão Alves</b><span>Doutor</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-13.webp" alt="Marcelo Ribeiro de Almeida Guedes" loading="lazy"><figcaption><b>Marcelo Ribeiro de Almeida Guedes</b><span>Mestre</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-14.webp" alt="Marcos Guimarães de Souza Cunha" loading="lazy"><figcaption><b>Marcos Guimarães de Souza Cunha</b><span>Doutor</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-15.webp" alt="Marta Lúcia Carvalho Galvão Alves" loading="lazy"><figcaption><b>Marta Lúcia Carvalho Galvão Alves</b><span>Mestre</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-16.webp" alt="Miguel de Lemos Neto" loading="lazy"><figcaption><b>Miguel de Lemos Neto</b><span>Doutor</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-17.webp" alt="Natasha Teixeira Logsdon" loading="lazy"><figcaption><b>Natasha Teixeira Logsdon</b><span>Doutora</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-18.webp" alt="Silvia Mello dos Santos" loading="lazy"><figcaption><b>Silvia Mello dos Santos</b><span>Mestre</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-19.webp" alt="Ulisses Cerqueira Linhares" loading="lazy"><figcaption><b>Ulisses Cerqueira Linhares</b><span>Doutor</span></figcaption></figure>
+      <figure class="fac"><img src="assets/img/web/docentes/prof-20.webp" alt="Waldemar Silva Costa" loading="lazy"><figcaption><b>Waldemar Silva Costa</b><span>Doutor</span></figcaption></figure>
     </div>
     <p class="docentes-note" data-reveal>Corpo docente formado por <b>Doutores e Mestres</b>, atuantes em diferentes especialidades médicas.</p>
     <div style="text-align:center;margin-top:34px" data-reveal>
@@ -630,7 +640,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="logo"><img src="assets/img/logo-color.png" alt="UGB/FERP"></div>
+        <div class="logo"><img src="assets/img/web/logo-color.webp" alt="UGB/FERP"></div>
         <p style="max-width:340px">Centro Universitário Geraldo Di Biase · UGB/FERP. Curso de Medicina no Campus de Barra do Piraí, formando médicos com prática, ciência e humanismo.</p>
         <div class="mec-badge">Curso autorizado pelo MEC · Portaria SERES nº 827/2025</div>
       </div>
