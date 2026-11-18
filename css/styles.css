@@ -222,7 +222,7 @@ body{
   background:var(--bg);line-height:1.6;font-size:17px;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;margin:0;font-weight:700;letter-spacing:-.02em;color:var(--navy)}
@@ -359,7 +359,8 @@ p{margin:0 0 1rem}
 .hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:60px;
   align-items:center;padding-top:82px;padding-bottom:96px}
 
-.hero-copy .eyebrow{margin-bottom:26px}
+.hero-copy .eyebrow{margin-bottom:26px;font-size:.9rem;letter-spacing:.12em}
+.hero-copy .eyebrow.on-dark{color:#ffb3ab}
 .hero-copy h1{font-size:clamp(2.6rem,5.2vw,4.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.06;color:#fff}
 /* "jaleco branco": manuscrito branco com risco amarelo desenhado à mão
    (resolve a ironia de pintar "branco" de amarelo + entra a jogada de fontes) */
@@ -372,7 +373,14 @@ p{margin:0 0 1rem}
 .hero-copy h1 .jaleco-emoji{font-size:.82em;vertical-align:.03em;line-height:1}
 /* "começa aqui" sobe um pouco para encostar melhor no risco do "jaleco branco" */
 .hero-copy h1 .hero-endline{position:relative;top:-.16em}
-.hero-sub{font-size:1.18rem;color:#cbd9ec;max-width:520px;margin:26px 0 32px;line-height:1.62}
+/* Faixa de datas do vestibular (primeira tela) */
+.hero-dates{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.hero-dates li{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:999px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#eaf2fc;font-size:.92rem;font-weight:600;line-height:1.25}
+.hero-dates b{color:#fff;font-weight:800}
+.hero-dates svg{width:18px;height:18px;color:var(--accent-light);flex:none}
+@media (max-width:760px){.hero-copy .eyebrow{font-size:.78rem}.hero-dates li{font-size:.86rem;border-radius:14px;padding:9px 13px}}
+.hero-sub{font-size:1.18rem;color:#cbd9ec;max-width:520px;margin:22px 0 32px;line-height:1.62}
 .hero-sub strong{color:#fff;font-weight:700}
 .hero-list{list-style:none;margin:0 0 34px;padding:0;display:grid;gap:13px;max-width:520px}
 .hero-list li{display:flex;align-items:flex-start;gap:12px;font-weight:500;color:#eaf2fc}
@@ -731,6 +739,7 @@ p{margin:0 0 1rem}
 .hero-copy>*{animation:fadeUp .7s both}
 .hero-copy .eyebrow{animation-delay:.05s}
 .hero-copy h1{animation-delay:.14s}
+.hero-copy .hero-dates{animation-delay:.2s}
 .hero-copy .hero-sub{animation-delay:.26s}
 .hero-copy .hero-list{animation-delay:.36s}
 .hero-copy .hero-actions{animation-delay:.46s}
