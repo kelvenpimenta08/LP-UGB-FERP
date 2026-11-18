@@ -361,6 +361,19 @@ p{margin:0 0 1rem}
 
 .hero-copy .eyebrow{margin-bottom:26px;font-size:.9rem;letter-spacing:.12em}
 .hero-copy .eyebrow.on-dark{color:#ffb3ab}
+/* Selo "Vestibular de Medicina 2027.1" — mesmo estilo do banner 2027 */
+.vest-badge{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin:0 0 26px}
+.vb-main{display:inline-flex;flex-direction:column;background:var(--accent);color:#fff;
+  padding:10px 18px 12px;border-radius:12px;box-shadow:0 10px 26px rgba(150,0,0,.35);line-height:1}
+.vb-kicker{font-family:var(--font);font-weight:800;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;opacity:.92;margin-bottom:6px}
+.vb-title{font-family:var(--font-display);font-weight:800;font-size:clamp(1.6rem,2.6vw,2.1rem);
+  letter-spacing:-.01em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.vb-year{background:#2e5da6;color:#fff;font-size:.62em;letter-spacing:.06em;padding:5px 9px 4px;border-radius:6px}
+.vb-status{display:inline-flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:.95rem;
+  letter-spacing:.04em;text-transform:uppercase}
+.vb-dot{width:10px;height:10px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:vbPulse 1.8s ease-out infinite}
+@keyframes vbPulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.6)}80%,100%{box-shadow:0 0 0 10px rgba(61,220,132,0)}}
+@media (max-width:760px){.vest-badge{margin-bottom:22px}.vb-main{padding:9px 15px 11px}.vb-status{font-size:.85rem}}
 .hero-copy h1{font-size:clamp(2.6rem,5.2vw,4.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.06;color:#fff}
 /* "jaleco branco": manuscrito branco com risco amarelo desenhado à mão
    (resolve a ironia de pintar "branco" de amarelo + entra a jogada de fontes) */
@@ -737,7 +750,7 @@ p{margin:0 0 1rem}
 [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 [data-reveal].in{opacity:1;transform:none}
 .hero-copy>*{animation:fadeUp .7s both}
-.hero-copy .eyebrow{animation-delay:.05s}
+.hero-copy .eyebrow,.hero-copy .vest-badge{animation-delay:.05s}
 .hero-copy h1{animation-delay:.14s}
 .hero-copy .hero-dates{animation-delay:.2s}
 .hero-copy .hero-sub{animation-delay:.26s}
