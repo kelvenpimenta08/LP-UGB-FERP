@@ -840,3 +840,12 @@ p{margin:0 0 1rem}
   .hero-trust{gap:16px 18px}
   .hero-trust .sep{display:none}
 }
+
+/* Oferta na primeira dobra: mensalidade + carga horária */
+.hero-offer{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 0;max-width:560px}
+.ho-card{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-top:3px solid var(--accent)}
+.ho-lbl{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#cfe0f5}
+.ho-val{font-family:var(--font-display);font-weight:800;font-size:clamp(1.7rem,2.6vw,2.2rem);color:#fff;line-height:1.05;letter-spacing:-.01em}
+.ho-val small{font-size:.48em;font-weight:700;margin:0 3px;opacity:.9}
+.ho-note{font-size:.82rem;color:#eaf2fc;line-height:1.3}
+@media (max-width:760px){.hero-offer{gap:10px}.ho-card{padding:12px}.ho-lbl{font-size:.66rem;letter-spacing:.08em}.ho-note{font-size:.76rem}}
